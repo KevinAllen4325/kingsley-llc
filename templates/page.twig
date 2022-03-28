@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% set settings = post.meta("page_setting") %}
+{% set entry = post.meta("content") %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				{% include "./partial/page_header.twig" %}
+				<div class="container section-padding flex-space-top">
+					<div class="article-container">
+					<div class="article-body">
+						<a href="tel:{{ phone_number }}" class="call-to-action flex-space-between static">
+							<i class="fa-solid fa-chevron-right"></i>
+							Tap Here to Call
+							<i class="fa-solid fa-chevron-left"></i>
+						</a>
+						{{entry}}
+					</div>
+				</div>
+				{% if settings.show_sidebar == "Yes" %}
+					<div class="article-sidebar">
+						{{ function('do_shortcode', '[contact-form-7 id="300" title="Contact Form Sidebar" html_class="contact-form-sidebar"]') }}
+					</div>
+				{% endif %}
+				</div>
+			</section>
+		</article>
+	</div>
+	<a class="call-to-action-popup" href="tel:{{ phone_number }}">
+		<i class="fa-solid fa-phone-volume"></i>
+	</a>
+{% endblock %}

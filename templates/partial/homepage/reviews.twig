@@ -1,0 +1,32 @@
+{% set r = post.meta('reviews') %}
+{% set counter = 1 %}
+
+<div class="main-content">
+    <p class="robotoBold sub-head">REVIEWS</p>
+    <h2 class="header">What Our Customers Say</h2>
+    
+    <div class="review-container flex-space-between">
+        
+        {% for r in reviews.results %}
+            {% if r.reviewBody | length <= 350 %}
+                {% if counter < 4 %}
+                    <div class="review">
+                        <div class="client-info">
+                            <div class="client-name">
+                                <p class="review-header">{{ r.author }}</p>
+                                <p class="review-date">{{ r.datePublished }}</p>
+                            </div>
+                        </div>
+                        <div class="client-review"><p>{{ r.reviewBody }}</p></div>
+                        <div class="review-stars">
+                            {% for i in 1..r.ratingValue %}
+                                <i class="fa fa-star"></i>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% set counter = counter + 1 %}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

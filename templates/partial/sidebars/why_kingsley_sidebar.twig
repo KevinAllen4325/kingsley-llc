@@ -1,0 +1,25 @@
+{% set wks = post.meta("why_kingsley_sidebar") %}
+{% set image = Image(wks.map.map_image) %}
+<div class="map-sidebar sidebar">
+    <img class="lazyload" src="{{ image | towebp }}" alt="{{ image.alt }}" width="378px" height="340px">
+        <p>{{ wks.map.tagline }}</p>
+</div>
+
+<div class="call-now sidebar">
+    <i class="fa fa-shield-blank"></i>
+    <p><strong>{{ wks.call_now.sub_head }}</strong></p>
+    <h4>{{ wks.call_now.header }}</h4>
+    <div class="border-bottom"></div>
+    <a href="tel:{{ phone_number }}">
+        <i class="fa fa-phone"></i>
+        {{ phone_number }}
+    </a>
+</div>
+{% for badge in wks.badges %}
+<div class="badge-sidebar sidebar">   
+    <p>
+        <i class="fa-solid fa-shield"></i>
+        {{ badge }}
+    </p>
+</div>
+{% endfor %}

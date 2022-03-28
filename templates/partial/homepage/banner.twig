@@ -1,0 +1,10 @@
+{% set banner = post.meta("homepage_hero_section") %}
+
+<div class="banner-container">
+    <p class="sub-location">{{ banner.sub_location }}</p>
+    <h2 class="banner-header">{{ banner.header }}</h2>
+    <p class="banner-sub-header">{{ banner.sub_header }}</p>
+    <a href="/contact-us/" class="call-to-action flex-space-between">
+        Contact Us Now
+    </a>
+</div>

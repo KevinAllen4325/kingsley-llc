@@ -1,0 +1,15 @@
+{% set settings = post.meta("page_setting") %}
+{% set featured = Image(post.featured_image) %}
+
+{% if settings.show_featured_image == "Yes" %}
+<div class="page-header flex-center show-featured-image" style="background-image: url({{ featured }})">
+<div class="overlay"></div>
+<div class="leftBar"></div>
+<div class="rightBar"></div>
+
+{% else %}
+<div class="page-header flex-center border-bottom">
+<p>Kingsley LLC.</p>
+{% endif %}
+        <h1>{% if post.title != "" %}{{post.title}}{% else %}Blog{% endif %}</h1>
+</div>

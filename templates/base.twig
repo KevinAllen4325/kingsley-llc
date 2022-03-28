@@ -1,0 +1,57 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		{# <a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a> #}
+		<header class="header border-bottom" >
+			{% block header %}
+				<div class="container flex-space-between">
+					{% if custom_logo_url %}
+						<a class="hdr-logo-link site-logo" href="{{site.url}}" rel="home">
+							<img class="lazyload" src="{{ custom_logo_url | towebp }}" alt="{{ site.name }} logo" width="200px" height="34px">
+						</a>
+					{% else %}
+						<h1 class="hdr-logo" role="banner">
+							<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+						</h1>
+					{% endif %}
+					<div class="navIcons">
+						<a href="tel:{{ phone_number }}" id="header-call-now">
+						<i class="fa fa-phone"></i>
+						{{ phone_number }}</a>
+						<i id="menuIcon" class="fa fa-bars"></i>
+					</div>
+				</div>
+				<nav id="nav-main" class="nav-main " role="navigation">
+					{% include "menu.twig" with {'items': menu.get_items} %}
+				</nav><!-- #nav -->
+				
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer" class="flex-space-between">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

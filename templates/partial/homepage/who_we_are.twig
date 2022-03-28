@@ -1,0 +1,29 @@
+{% set wwa = post.meta('who_we_are') %}
+
+<div class="main-content">
+    <p class="location-sub-head">{{ wwa.sub_header }}</p>
+    <h2 class="RobotoBold">{{ wwa.headline }}</h2>
+    {{ wwa.top_text }}
+    <div class="list">
+        <div class="list-item">
+            <span class="border-top-rounded"></span>
+            <h3 class="RobotoBold">{{ wwa.list_item_1.list_item_header }}</h3>
+            {{ wwa.list_item_1.list_item_text }}
+            <div class="tabs"> 
+                {% for tab in wwa.list_item_1.list_tabs %}
+                    <span class="list-tab">{{ tab }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="list-item">
+            <span class="border-top-rounded"></span>
+            <h3 class="RobotoBold">{{ wwa.list_item_2.list_item_header }}</h3>
+            {{ wwa.list_item_2.list_item_text }}
+            <div class="tabs"> 
+                {% for tab in wwa.list_item_2.list_tabs %}
+                    <span class="list-tab">{{ tab }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

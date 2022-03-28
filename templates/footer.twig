@@ -1,0 +1,29 @@
+<div class="container flex-space-between">
+    <div class="footer-left">
+        <div class="site-logo">
+            <a href="{{ site.url }}">
+                <img class="lazyload" src="{{ custom_logo_url | towebp }} "alt="{{ site.name }}" width="200px" height="34px"/>
+            </a>
+        </div>
+        <div class="social-links">
+            {% include "./partial/socials.twig" %}
+        </div>
+        <div class="copyright">
+            <p>© {{ 'now' | date('Y') }} Kingsley, LLC, - All Rights Reserved</p>
+        </div>
+    </div>
+    
+    <div class="footer-right" style="max-width: 200px; width: 100%;">
+        <p>2439 Main St. Ste D<br>
+        Elgin, SC 29045</p>
+        <p><a class="font-bold" href="tel:803-408-4911">803-408-4911</a></p>
+        <a style="display: block; height: 60px" href="https://www.bbb.org/us/sc/west-columbia/profile/water-damage-restoration/kingsley-water-damage-restoration-0663-34224537" target="_blank"><img src="/wp-content/uploads/2022/03/BBB_Logo.webp" width="159px" height="60px" alt="BBB Logo"></a>
+    </div>
+    
+    <div class="footer-right footer-google">
+        {{ address }}
+        <p><a class="font-bold" href="tel:{{phone_number }}">{{phone_number }}</a></p>
+        <a style="display: block; height: 60px" href="https://www.google.com/search?q=kingsley+llc+south+carolina&sxsrf=APq-WBt3xMGNrZuByE5hMMXydoQKIMWKRg%3A1647795459381&ei=A103Yp7pFonbtQb6tLHICQ&ved=0ahUKEwje9pK4lNX2AhWJbc0KHXpaDJkQ4dUDCA4&uact=5&oq=kingsley+llc+south+carolina&gs_lcp=Cgdnd3Mtd2l6EAMyCAghEBYQHRAeMggIIRAWEB0QHjoHCAAQRxCwAzoKCAAQRxCwAxDJAzoICAAQkgMQsAM6BggAEBYQHjoJCAAQyQMQFhAeOgUIIRCgAToFCCEQqwJKBAhBGABKBAhGGABQrAVYshFg7hFoAnABeACAAYcBiAH5CJIBBDExLjKYAQCgAQHIAQXAAQE&sclient=gws-wiz#lrd=0x88f8a45fe8459197:0xd0c1d7f53101843f,1,,," target="_blank"><img src="/wp-content/uploads/2022/03/Google_Review_Logo.webp" width="150px" height="60px" alt="5 star Google reviews"></a>
+    </div>
+    <p class="kevinallen">Development by <a href="https://kevinallen.io">Kevin Allen</a></p>
+</div>

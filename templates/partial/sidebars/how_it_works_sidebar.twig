@@ -1,0 +1,8 @@
+{% set hws = post.meta("how_it_works_sidebar") %}
+
+{% for block in hws %}
+    <div class="how-it-works-block sidebar flex-center">
+        <span>{{ loop.index }}.</span>
+        <p>{{ block }}</p>
+    </div>
+{% endfor %}

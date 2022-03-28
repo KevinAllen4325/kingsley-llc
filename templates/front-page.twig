@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+{% set hero = post.meta('homepage_hero_section') %}
+
+{% block content %}
+<style>
+	.homepage-hero{
+    	background-image: url({{ hero.background_image.desktop }})
+    }
+        @media screen and (max-width: 500px){
+            .homepage-hero{
+            background-image: url({{ hero.background_image.mobile }})
+        }
+    }
+</style>
+	<div class="homepage-hero flex-center border-bottom">
+		<div class="leftBar"></div>
+		<div class="rightBar"></div>
+		<div class="overlay-black"></div>
+		<div class="container">
+			{% include "./partial/homepage/home_hero.twig" %}
+		</div>
+	</div>
+
+	<div class="container border-bottom who-we-are section-padding">
+		<div class="flex-space-top">
+			{% include "./partial/homepage/who_we_are.twig" %}
+			<div class="homepage-sidebars">
+				{% include "./partial/sidebars/who_we_are_sidebar.twig" %}
+			</div>
+		</div>
+	</div>
+
+	<div class="container border-bottom why-kingsley section-padding">
+		<div class="flex-space-top">
+			{% include "./partial/homepage/why_kingsley.twig" %}
+			<div class="homepage-sidebars">
+				{% include "./partial/sidebars/why_kingsley_sidebar.twig" %}
+			</div>
+		</div>
+	</div>
+
+	<div class="container reviews section-padding">
+		{% include "./partial/homepage/reviews.twig" %}
+	</div>
+
+	<div class="container how-it-works section-padding">
+		<div class="flex-space-top">
+			{% include "./partial/homepage/how_it_works.twig" %}
+			<div class="homepage-sidebars">
+				{% include "./partial/sidebars/how_it_works_sidebar.twig" %}
+			</div>
+		</div>
+	</div>
+
+	<div class="banner section-padding">
+		{% include "./partial/homepage/banner.twig" %}
+	</div>
+
+{% endblock %}

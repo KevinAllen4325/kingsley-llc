@@ -1,0 +1,17 @@
+{% set wk = post.meta('why_kingsley') %}
+
+<div class="main-content">
+    <p class="location-sub-head">{{ wk.sub_header }}</p>
+    <h2 class="RobotoBold">{{ wk.headline }}</h2>
+    {{ wk.top_text }}
+    <div class="list">
+        {% for item in wk.list %}
+            <div class="list-item">
+                <span class="border-top-rounded"></span>
+                <h3 class="RobotoBold">{{ item.list_item_header }}</h3>
+                {{ item.list_item_text }}
+            </div>
+        {% endfor %}
+    </div>
+    {{ wk.bottom_text }}
+</div>

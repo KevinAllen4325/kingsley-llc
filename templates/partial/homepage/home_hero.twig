@@ -1,0 +1,14 @@
+{% set hero = post.meta('homepage_hero_section') %}
+
+<div class="hero-overlay">
+	<img class="lazyload hero-image" src="{{hero.main_image | towebp}}" alt="{{hero.main_image.title}}" height="82px" width="82px">
+    <p class="sub-location">{{ hero.sub_location }}</p>
+    <h1 class="heroHeader">{{ hero.header }}</h1>
+    <h2 class="hero-sub-header">{{ hero.sub_header }}</h2>
+    <a href="tel:{{ phone_number }}" class="call-to-action call-to-action flex-space-between">
+		<i class="fa-solid fa-chevron-right"></i>
+        Tap Here to Call
+		<i class="fa-solid fa-chevron-left"></i>
+    </a>
+    <p class="hero-locations">{{ hero.areas_served_tagline }}</p>
+</div>

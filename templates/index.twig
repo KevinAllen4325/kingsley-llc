@@ -1,0 +1,14 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include "./partial/page_header.twig" %}
+	<div class="container">
+		<div class="blog-teaser section-padding">
+			{% for post in posts %}
+				{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+			{% endfor %}
+		</div>
+	</div>
+	
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}
